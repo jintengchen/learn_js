@@ -1,0 +1,13 @@
+<button class="myclick">Click me</button>
+<button id="myid">Click me</button>
+
+<script>
+    var myButton = document.querySelector("button.myclick");
+    myButton.onclick = function() {
+        alert('hello');
+    };
+    var myButtonID = document.querySelector("button#myid");
+    myButtonID.onclick = function () {
+        alert("My id");
+    };
+</script>

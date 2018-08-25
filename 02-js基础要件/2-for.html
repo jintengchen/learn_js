@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label for="search">Search by contact name: </label>
+        <input id="search" type="text">
+        <button>Search</button>
+        <p></p>
+    </body>
+
+    <script>
+        var contact = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+        var para = document.querySelector('p');
+        var input = document.querySelector('input');
+        var btn = document.querySelector('button');
+
+        btn.addEventListener('click',function() {
+            var searchName = input.value;
+            input.value = '';
+            input.focus();
+            for (var i = 0; i < contact.length; i++) {
+                var splitContact = contact[i].split(':');
+                if (splitContact[0] === searchName) {
+                    para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';
+                    break;
+                } else {
+                    para.textContent = 'Contact not found';
+                }
+            }
+        });
+    </script>
+
+</html>
